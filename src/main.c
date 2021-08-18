@@ -13,12 +13,13 @@ int main( int argc, char *argv[] )
 {   
     const char* default_path = "./release/generated2.txt";
     // const std::string uncompressed_path =  "./release/generated.dcmps";
-    // const std::string compressed_path =  "./release/generated.cmps";
+    const char* compressed_path =  "./release/generated.cmps";
 
     // std::string buffer = "";
 
-    CMPS_read_from_file( default_path );
+    const char *buffer = CMPS_read_from_file( default_path );
 
+    CMPS_write_to_file( compressed_path, buffer );
 
     // printf("%s", getString() );
     

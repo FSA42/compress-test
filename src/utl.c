@@ -21,6 +21,10 @@
 
    void CMPS_write_to_file( const char *path, const char *buffer )
     {
+        FILE *writer;
+        writer = fopen(path,"w");
+        fwrite( buffer, sizeof(char),200 * MIL, writer);
+        fclose( writer );
         // std::ofstream writer( path );
         // writer << buffer;
         // writer.close();
